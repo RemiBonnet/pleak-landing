@@ -14,8 +14,6 @@ export const BlockStyle = styled.div`
   }
   ${ media.mobile`
     width: 100%;
-    /* padding-top: 80px; */
-    /* padding-bottom: 75px; */
     padding-top: 65px;
     padding-bottom: 55px;
     border-bottom: 1px solid ${white2};
@@ -29,8 +27,12 @@ export const BlockStyle = styled.div`
     text-align: center;
     line-height: 45px;
     margin-bottom: 15px;
-    padding-left: 5px;
+    padding-left: 3px;
     padding-top: 1px;
+    ${ media.mobile`
+      padding-left: 0;
+      padding-top: 0;
+    ` }
   }
   h3 {
     font-family: 'inter-medium';

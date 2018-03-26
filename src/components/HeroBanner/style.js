@@ -14,6 +14,9 @@ export const HeroBannerStyle = styled.div`
     top: calc(50% - 10px);
     left: 50%;
     transform: translate(-50%, -50%);
+    ${ media.tablet`
+      padding: 0 24px;
+    ` }
     ${ media.mobile`
       width: 100%;
       padding: 0 24px;
@@ -46,6 +49,9 @@ export const HeroBannerStyle = styled.div`
     max-width: 1440px;
     margin-left: auto;
     margin-right: auto;
+    ${ media.large`
+      display: none;
+    ` }
     img {
       pointer-events: none;
       height: 80%;
