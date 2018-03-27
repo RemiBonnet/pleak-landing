@@ -18,17 +18,20 @@ export const BlockStyle = styled.div`
     padding-bottom: 55px;
     border-bottom: 1px solid ${white2};
   ` }
-  span {
+  i {
+    position: relative;
     display: block;
     width: 45px;
     height: 45px;
     border-radius: 50%;
     border: 1px solid ${white2};
-    text-align: center;
-    line-height: 45px;
+    line-height: 47px;
     margin-bottom: 15px;
-    padding-left: 3px;
-    padding-top: 1px;
+    span {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-38%);
+    }
     ${ media.mobile`
       padding-left: 0;
       padding-top: 0;
