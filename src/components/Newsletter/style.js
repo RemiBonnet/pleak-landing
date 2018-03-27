@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { white, gray2 } from '../../styles/colors'
+import { white, gray2, red } from '../../styles/colors'
 import { media } from '../../styles/responsive'
 
 export const NewsletterStyle = styled.div`
@@ -51,32 +51,27 @@ export const NewsletterStyle = styled.div`
     }
   }
   .Msg {
+    position: relative;
     width: 100%;
-    position: absolute;
+    font-size: 16px;
     text-align: center;
-    padding-top: 50px;
-    font-size: 20px;
-    span {
-      opacity: 0;
-      display: inline-block;
-      margin-right: 20px;
-      animation: bounce 0.8s cubic-bezier(0.64, 0.57, 0.67, 1.53) infinite alternate;
-      &:last-child {
-        animation-delay: 0.15s;
-      }
+    &__error {
+      position: absolute;
+      top: 12px;
+      font-family: 'inter-medium';
+      color: ${red};
+      margin-left: 280px;
+      ${ media.mobile`
+        width: 100%;
+        margin-left: 0;
+      ` }
     }
-  }
-  @keyframes bounce {
-    0% {
-      opacity: 1;
-      transform: translateY(2px);
-    }
-    50% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(3px);
-      opacity: 0;
+    &__success {
+      width: 100%;
+      height: 35px;
+      line-height: 25px;
+      font-family: 'inter-regular';
+      color: ${gray2}
     }
   }
 `

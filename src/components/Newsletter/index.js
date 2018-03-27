@@ -22,35 +22,27 @@ const Newsletter = () => {
           url={url}
           render={({ subscribe, status }) => (
             <div>
-              <div className="Input">
-                <input
-                  ref={node => (email = node)}
-                  type="email"
-                  placeholder="Enter your email address" 
-                />
-                <button onClick={() => submit(formData => subscribe(formData))}>
-                  Submit
-                </button>
-              </div>
+              { !(status === 'success') &&
+                <div className="Input">
+                  <input
+                    ref={node => (email = node)}
+                    type="email"
+                    placeholder="Enter your email address" 
+                  />
+                  <button onClick={() => submit(formData => subscribe(formData))}>
+                    Submit
+                  </button>
+                </div>
+              }
               <div className="Msg">
                 { status === 'error' &&
-                  <div>
-                    <span role="img" aria-label="error">
-                      ❌
-                    </span>
-                    <span role="img" aria-label="error">
-                      ❌ 
-                    </span>
+                  <div className="Msg__error">
+                    Please enter a valid email
                   </div>
                 }
                 { status === 'success' &&
-                  <div>
-                    <span role="img" aria-label="success">
-                      🎉
-                    </span>
-                    <span role="img" aria-label="success">
-                      🎉
-                    </span>
+                  <div className="Msg__success">
+                    <span role="img" aria-label="success">✅</span> Thank you, you'll be contacted soon about our closed beta launch
                   </div>
                 }
               </div>
