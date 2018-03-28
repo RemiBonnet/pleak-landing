@@ -7,8 +7,7 @@ const HeroBanner = () => (
     <div className="Container">
       <h2>
         Performance monitoring <br />
-        for React Native apps in <br />
-        production
+        for React Native apps <br />
       </h2>
       <p>
         Get meaningful data about your app. We monitor your apps to provide <br />
