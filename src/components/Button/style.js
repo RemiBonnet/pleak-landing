@@ -13,7 +13,7 @@ export const ButtonStyle = styled.div`
   font-family: 'inter-regular', sans-serif;
   &:hover {
     span {
-      animation: bounceArrow 0.35s cubic-bezier(0.64, 0.57, 0.67, 1.53) infinite alternate;
+      animation: bounceArrow 0.45s ease-in-out infinite alternate;
       ${ media.tablet`
         animation: inherit;
     ` }
