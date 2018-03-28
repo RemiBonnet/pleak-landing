@@ -10,7 +10,7 @@ const Home = () => {
       <HeroBanner />
       <Content />
       <CatchLine 
-        content='« 😱OMG, this tool sounds amazing! »' />
+        content='😱OMG, this tool sounds amazing!' />
       <Footer />
     </div>
   )
