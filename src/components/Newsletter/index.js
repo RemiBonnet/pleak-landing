@@ -13,6 +13,9 @@ const Newsletter = () => {
     onValidated({
       EMAIL: email.value
     })
+    window.analytics.track("subscribed_newsletter", {
+      email: email.value,
+    })
   }
 
   return (
