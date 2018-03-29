@@ -8,6 +8,7 @@ const handleClick = () => {
     scrollTo: '.Footer',
     ease: Expo.easeOut
   })
+  window.analytics.track("click_on_signup_hero")
 }
 
 const Button = () => (
