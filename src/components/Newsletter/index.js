@@ -13,6 +13,15 @@ const Newsletter = () => {
     onValidated({
       EMAIL: email.value
     })
+    window.analytics.track("subscribed_newsletter", {
+      email: email.value,
+    })
+  }
+
+  const keyPress = (e, cb) => {
+    if(e.keyCode == 13 || e.charCode == 13) {
+      submit(formData => cb(formData))
+    }
   }
 
   return (
@@ -27,6 +36,7 @@ const Newsletter = () => {
                   <input
                     ref={node => (email = node)}
                     type="email"
+                    onKeyPress={(e) => keyPress(e, formData => subscribe(formData))}
                     placeholder="Enter your email address" 
                   />
                   <button onClick={() => submit(formData => subscribe(formData))}>
