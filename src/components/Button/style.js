@@ -11,6 +11,10 @@ export const ButtonStyle = styled.div`
   color: ${white};
   padding: 0 20px;
   font-family: 'inter-regular', sans-serif;
+  ${ media.mobile`
+    width: 100%;
+    text-align: center;
+  ` }
   &:hover {
     span {
       animation: bounceArrow 0.45s ease-in-out infinite alternate;

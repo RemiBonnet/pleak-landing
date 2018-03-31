@@ -7,6 +7,9 @@ export const HeroBannerStyle = styled.div`
   width: 100%;
   height: calc(80vh - 80px);
   border-bottom: 1px solid ${white2};
+  ${ media.mobile`
+    height: 80vh;
+  ` }
   .Container {
     z-index: 2;
     width: 100%;
@@ -39,6 +42,9 @@ export const HeroBannerStyle = styled.div`
       font-size: 16px;
       line-height: 25px;
       margin-bottom: 45px;
+      ${ media.mobile`
+        margin-bottom: 65px;
+      ` }
     }
   }
   .Image {
