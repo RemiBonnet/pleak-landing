@@ -27,15 +27,27 @@ export const BlockStyle = styled.div`
     border: 1px solid ${white2};
     line-height: 47px;
     margin-bottom: 15px;
-    span {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-38%);
-    }
-    ${ media.mobile`
-      padding-left: 0;
-      padding-top: 0;
+    &::before {
+      position: relative;
+      left: 1px;
+      content: '${props => props.icon}';
+      display: block;
+      text-align: center;
+      font-size: 1.1em;
+      /* Fix chrome */
+      @media screen and (-webkit-min-device-pixel-ratio:0)
+      and (min-resolution:.001dpcm) {
+        left: 2px;
+      }
+      /* Fix firefox */
+      @supports (-moz-appearance:none) {
+        left: 0;
+      }
+      ${ media.mobile`
+        font-size: 0.9em;
+        bottom: 2px;
     ` }
+    }
   }
   h3 {
     font-family: 'inter-medium';
