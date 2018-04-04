@@ -19,7 +19,7 @@ const Newsletter = () => {
   }
 
   const keyPress = (e, cb) => {
-    if(e.keyCode == 13 || e.charCode == 13) {
+    if(e.keyCode === 13 || e.charCode === 13) {
       submit(formData => cb(formData))
     }
   }
