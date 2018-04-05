@@ -10,8 +10,7 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
     "styled-components": "^3.2.3",
-    "styled-reset": "^1.2.0",
-    "@pleak/react-perf-monitor": "git+ssh://git@github.com:baptistelambert/pleak-react-perf-monitor.git"
+    "styled-reset": "^1.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
