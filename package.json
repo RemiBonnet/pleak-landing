@@ -16,6 +16,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "build:pleak": "cd ./src/pleak-react-perf-monitor && yarn && yarn build && cd ../../",
     "eject": "react-scripts eject"
   }
 }

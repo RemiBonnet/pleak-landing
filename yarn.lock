@@ -2,6 +2,12 @@
 # yarn lockfile v1
 
 
+"@pleak/react-perf-monitor@git+ssh://git@github.com:baptistelambert/pleak-react-perf-monitor.git":
+  version "0.1.0"
+  resolved "git+ssh://git@github.com/baptistelambert/pleak-react-perf-monitor.git#729f622bccc112a23bfbb154ec6e81a96a32d786"
+  dependencies:
+    fbjs "^0.8.16"
+
 abab@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
