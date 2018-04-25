@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import HeroBanner from '../../components/HeroBanner'
 import Content from '../../components/Content'
 import CatchLine from '../../components/CatchLine'
 import Footer from '../../components/Footer'
 
-const Home = (
+const Home = () => (
   <div>
     <HeroBanner />
     <Content />
