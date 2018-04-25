@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { gray, white2, white, black } from '../../styles/colors'
+import { gray, white2, white } from '../../styles/colors'
 import { media } from '../../styles/responsive'
 
 export const NavigationStyle = styled.div`
@@ -18,14 +18,12 @@ export const NavigationStyle = styled.div`
     font-size: 20px;
     line-height: 80px;
     color: ${gray};
-    &::before {
-      display: inline-block;
-      content: '';
-      background: ${black};
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      margin-right: 10px;
-    }
+  }
+  img {
+    position: relative;
+    top: 2px;
+    width: 20px;
+    height: auto;
+    margin-right: 10px;
   }
 `
