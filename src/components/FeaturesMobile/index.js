@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import TweenLite from 'gsap'
+import React from 'react'
 import { FeaturesMobileStyle } from './style'
 
 const FeaturesMobile = props => (
