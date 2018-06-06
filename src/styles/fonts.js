@@ -16,6 +16,14 @@ const fonts = `
     font-weight: normal;
     font-style: normal;
   }
+
+  @font-face {
+    font-family: 'inter-bold';
+    src: url('${url}Inter-UI-Bold.woff2') format('woff2'),
+        url('${url}Inter-UI-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
 `
 
 export default fonts
