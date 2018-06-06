@@ -1,16 +1,21 @@
 import styled from 'styled-components'
 import { black, white, red, blue, electricViolet } from '../../styles/colors'
+import { media } from '../../styles/responsive'
 
 export const SliderStyle = styled.div`
   width: 100%;
   height: 780px;
-  /* max-height: 780px; */
   background: ${black};
   color: ${white};
+  & > div {
+    height: 100%;
+    max-width: 965px;
+    margin: 0 auto;
+  }
   .Slider {
     &__left {
       position: relative;
-      display: inline-block;
+      display: inline-flex;
       width: 50%;
       height: 100%;
       .Slide {
@@ -24,7 +29,6 @@ export const SliderStyle = styled.div`
         transition: opacity 200ms ease-in-out;
         &--1 {
           background: ${white};
-          opacity: 1;
         }
         &--2 {
           background: ${red};
@@ -35,18 +39,21 @@ export const SliderStyle = styled.div`
       }
     }
     &__right {
-      display: inline-block;
+      display: inline-flex;
       width: 50%;
       height: 100%;
       vertical-align: top;
       position: relative;
-      padding-left: 100px;
+      padding-left: 130px;
+      ${ media.tablet`
+        padding-left: 100px;
+      ` }
       &__container {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
         & > div {
-          margin-top: 55px;
+          margin-top: 54px;
           cursor: pointer;
           font-family: sans-serif;
           &:first-child {
@@ -60,19 +67,27 @@ export const SliderStyle = styled.div`
               font-size: 16px;
               max-width: 370px;
               transition: 200ms opacity ease-in-out;
-              span {
+              .Timer {
                 display: block;
                 width: 100%;
                 height: 1px;
-                background: ${electricViolet};
+                background: ${white};
+                margin-top: 1px;
+                span {
+                  opacity: 0;
+                  display: block;
+                  background: ${electricViolet};
+                  width: 0;
+                  height: 100%;
+                }
               }
               svg {
-                margin-bottom: 18px;
+                margin-bottom: 12px;
                 margin-top: 25px;
               }
               h3 {
                 font-family: 'inter-bold';
-                line-height: 30px;
+                line-height: 32px;
               }
               p {
                 font-family: 'inter-regular';
