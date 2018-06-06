@@ -68,17 +68,17 @@ export const SliderStyle = styled.div`
               max-width: 370px;
               transition: 200ms opacity ease-in-out;
               .Timer {
-                display: block;
+                position: relative;
                 width: 100%;
                 height: 1px;
                 background: ${white};
                 margin-top: 1px;
                 span {
+                  position: absolute;
                   opacity: 0;
-                  display: block;
                   background: ${electricViolet};
                   width: 0;
-                  height: 100%;
+                  height: 1px;
                 }
               }
               svg {
