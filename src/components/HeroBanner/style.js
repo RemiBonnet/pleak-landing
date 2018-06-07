@@ -30,6 +30,7 @@ export const HeroBannerStyle = styled.div`
         ${ media.mobile`
           font-size: 32px;
           line-height: 40px;
+          br { display: none; }
         ` }
       }
       p {
