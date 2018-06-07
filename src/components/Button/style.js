@@ -8,8 +8,8 @@ export const ButtonStyle = styled.a`
   width: 170px;
   height: 40px;
   line-height: 40px;
-  background: ${props => props.github ? 'transparent' : blue};
-  border: ${props => props.github ? `1px solid ${white40}` : '0'};
+  background: ${props => props.noBg ? 'transparent' : blue};
+  border: ${props => props.noBg ? `1px solid ${white40}` : '0'};
   color: ${white};
   padding: 0 20px;
   font-family: 'inter-medium', sans-serif;

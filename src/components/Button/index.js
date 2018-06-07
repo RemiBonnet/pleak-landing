@@ -7,7 +7,7 @@ const handleClick = () => {
 
 const Button = props => (
   <ButtonStyle
-    github={props.github}
+    noBg={props.github || props.noBg}
     onClick={() => handleClick(props.url)}>
     {props.github &&
       <svg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'>
