@@ -1,41 +1,43 @@
 import styled from 'styled-components'
-import { white, black } from '../../styles/colors'
+import { white, blue, white40 } from '../../styles/colors'
 import { media } from '../../styles/responsive'
 
-export const ButtonStyle = styled.div`
-  width: 255px;
+export const ButtonStyle = styled.a`
+  display: inline-block;
   cursor: pointer;
-  line-height: calc(60px - 1px);
-  height: 100%;
-  background: ${black};
+  width: 170px;
+  height: 40px;
+  line-height: 40px;
+  background: ${props => props.github ? 'transparent' : blue};
+  border: ${props => props.github ? `1px solid ${white40}` : '0'};
   color: ${white};
   padding: 0 20px;
-  font-family: 'inter-regular', sans-serif;
+  font-family: 'inter-medium', sans-serif;
+  border-radius: 204px;
+  text-align: center;
+  margin-top: 35px;
+  transform: translateY(0);
+  transition: all 0.15s ease;
   ${ media.mobile`
-    width: 100%;
-    text-align: center;
+    display: block;
   ` }
-  &:hover {
-    span {
-      animation: bounceArrow 0.45s ease-in-out infinite alternate;
-      ${ media.tablet`
-        animation: inherit;
+  &:last-child {
+    margin-left: 25px;
+    ${ media.mobile`
+      margin-left: 0;
+      margin-top: 20px;
     ` }
-    }
   }
-  span {
-    position: relative;
-    top: -2px;
-    display: inline-block;
-    background: url('arrow.svg');
-    background-size: cover;
-    width: 8px;
-    height: 5px;
-    margin-left: 5px;
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+    border-color: ${white};
   }
-  @keyframes bounceArrow {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(2px); }
-    100% { transform: translateY(0); }
+  svg {
+    vertical-align: -4px;
+    margin-right: 5px;
   }
+  /* ${ media.mobile`
+    margin: 0 24px;
+  ` } */
 `
