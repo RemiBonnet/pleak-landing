@@ -2,7 +2,7 @@ import React from 'react'
 import { ButtonStyle } from './style.js'
 
 const handleClick = props => {
-  // bind click
+  if (props.github) window.open('https://github.com/pleak', '_blank')
 }
 
 const Button = props => (

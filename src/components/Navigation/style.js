@@ -33,7 +33,7 @@ export const NavigationStyle = styled.div`
         margin-right: 25px;
       `}
       &:hover {
-        opacity: 0.8;
+        opacity: 0.4;
       }
       &:last-child {
         margin-right: 15px;
