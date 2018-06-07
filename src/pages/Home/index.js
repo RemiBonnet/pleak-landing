@@ -8,6 +8,7 @@ import FeaturesMobile from '../../components/FeaturesMobile'
 import Blocks from '../../components/Blocks'
 import BlocksColor from '../../components/BlocksColor'
 import BlockBeta from '../../components/BlockBeta'
+import Footer from '../../components/Footer'
 
 const layout = layoutGenerator({
   mobile: 0,
@@ -72,6 +73,7 @@ const Home = () => (
     </OnMobile>
     <BlocksColor />
     <BlockBeta />
+    <Footer />
   </div>
 )
 
