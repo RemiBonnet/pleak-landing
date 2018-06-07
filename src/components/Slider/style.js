@@ -21,7 +21,7 @@ export const SliderStyle = styled.div`
       .Slide {
         position: absolute;
         top: 50%;
-        left: 50%;
+        left: calc(50% - 15px);
         transform: translate(-50%, -50%);
         opacity: 0;
         width: 470px;

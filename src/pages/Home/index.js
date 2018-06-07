@@ -6,6 +6,7 @@ import HeroBanner from '../../components/HeroBanner'
 import Slider from '../../components/Slider'
 import FeaturesMobile from '../../components/FeaturesMobile'
 import Blocks from '../../components/Blocks'
+import BlocksColor from '../../components/BlocksColor'
 
 const layout = layoutGenerator({
   mobile: 0,
@@ -68,10 +69,7 @@ const Home = () => (
         content={sliderContent}
       />
     </OnMobile>
-    {/* <Content /> */}
-    {/* <CatchLine 
-      content='😱OMG, this tool sounds amazing!' />
-    <Footer /> */}
+    <BlocksColor />
   </div>
 )
 
