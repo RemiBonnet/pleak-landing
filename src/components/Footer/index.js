@@ -11,7 +11,7 @@ const Footer = () => (
       <div className="Footer__bottom">
         <div className="Footer__bottom__links">
           <a href="">Terms of Service</a>
-          <a href="">Contact</a>
+          <a href="mailto:hello@getpleak.io">Contact</a>
         </div>
         <div className="Footer__bottom__rs">
           <a rel="noopener noreferrer" target="_blank" href="https://github.com/pleak">
