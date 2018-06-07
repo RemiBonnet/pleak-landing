@@ -1,6 +1,7 @@
 import React from 'react'
 import { layoutGenerator } from 'react-break'
 import { sizes } from '../../styles/responsive.js'
+import Navigation from '../../components/Navigation'
 import HeroBanner from '../../components/HeroBanner'
 import Slider from '../../components/Slider'
 import FeaturesMobile from '../../components/FeaturesMobile'
@@ -33,6 +34,7 @@ const sliderContent = [
 
 const Home = () => (
   <div>
+    <Navigation />
     <HeroBanner />
     <OnDesktop>
       <Slider

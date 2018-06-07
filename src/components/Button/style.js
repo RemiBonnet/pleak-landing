@@ -15,7 +15,6 @@ export const ButtonStyle = styled.a`
   font-family: 'inter-medium', sans-serif;
   border-radius: 204px;
   text-align: center;
-  margin-top: 35px;
   transform: translateY(0);
   transition: all 0.15s ease;
   ${ media.mobile`
@@ -25,7 +24,6 @@ export const ButtonStyle = styled.a`
     margin-left: 25px;
     ${ media.mobile`
       margin-left: 0;
-      margin-top: 20px;
     ` }
   }
   &:hover {

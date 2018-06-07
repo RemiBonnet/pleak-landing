@@ -4,7 +4,7 @@ import { media } from '../../styles/responsive'
 
 export const HeroBannerStyle = styled.div`
   width: 100%;
-  height: 680px;
+  height: calc(100vh - 150px);
   background: blue;
   ${ media.large`
     padding: 0 24px;
@@ -18,10 +18,18 @@ export const HeroBannerStyle = styled.div`
     margin: 0 auto;
     max-width: 1170px;
     height: 100%;
-    div {
+    &__container {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
+    }
+    &__top {
+      width: 100%;
+    }
+    &__bottom {
+      height: 65px;
+    }
+    div {
       h1 {
         font-family: 'inter-bold';
         color: ${white};
@@ -40,6 +48,12 @@ export const HeroBannerStyle = styled.div`
         color: ${white};
         font-size: 16px;
         line-height: 25px;
+        margin-bottom: 25px;
+      }
+      a {
+        &:last-child {
+          margin-top: 25px;
+        }
       }
     }
   }
