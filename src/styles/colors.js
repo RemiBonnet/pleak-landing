@@ -1,4 +1,5 @@
 export const white = '#FFFFFF'
+export const white40 = 'rgba(255, 255, 255, 0.4)'
 export const white2 = '#E9E9E9'
 export const black = '#111111'
 export const gray = '#A8A8A8'

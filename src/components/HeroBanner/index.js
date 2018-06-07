@@ -1,23 +1,30 @@
 import React from 'react'
-import Button from '../../components/Button'
 import { HeroBannerStyle } from './style.js'
+import Button from '../Button/index.js';
 
 const HeroBanner = () => (
   <HeroBannerStyle>
-    <div className="Container">
-      <h2>
-        Performance monitoring <br />
-        for React Native apps <br />
-      </h2>
-      <p>
-        Get meaningful data about your app. We monitor your apps to provide <br />
-        you a comprehensive data set, from the app opening to any <br />
-        component.
-      </p>
-      <Button />
-    </div>
-    <div className="Image">
-      <img aria-hidden src="herobanner.svg" alt="Pleak image" />
+    <div className="HeroBanner">
+      <div>
+        <h1>
+          Grow your application's <br />
+          business by monitoring <br /> 
+          your performance
+        </h1>
+        <p>
+          Monitor technical performance of your applications to provide you essential metrics set and take 
+          a customer-centric approach to decision-making.
+        </p>
+        <Button
+          label="Github"
+          url=""
+          github
+        />
+        <Button
+          label="Request a demo"
+          url=""
+        />
+      </div>
     </div>
   </HeroBannerStyle>
 )
