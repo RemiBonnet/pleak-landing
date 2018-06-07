@@ -30,17 +30,25 @@ export const NavigationStyle = styled.div`
       font-family: 'inter-regular';
       transition: opacity 0.2s ease;
       ${ media.mobile`
-        margin-right: 25px;
+        margin-right: 15px;
+        line-height: 26px;
       `}
       &:hover {
         opacity: 0.4;
       }
       &:last-child {
         margin-right: 15px;
+        ${ media.mobile`
+          margin-right: 0;
+        ` }
       }
     }
     .Navigation__left {
       display: inline-block;
+      ${ media.mobile`
+        float: right;
+        margin-top: 2px;
+      ` }
     }
     .Navigation__right {
       display: inline-block;

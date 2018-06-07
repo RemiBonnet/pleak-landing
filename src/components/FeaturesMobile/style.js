@@ -3,7 +3,7 @@ import { black, white } from '../../styles/colors'
 
 export const FeaturesMobileStyle = styled.div`
   background: ${black};
-  padding: 50px 24px;
+  padding: 70px 24px;
   color: ${white};
   h2 {
     font-family: 'inter-bold';

@@ -11,6 +11,7 @@ export const HeroBannerStyle = styled.div`
   ` }
   ${ media.mobile`
     padding: 0 24px;
+    height: 700px;
   ` }
   .HeroBanner {
     position: relative;
