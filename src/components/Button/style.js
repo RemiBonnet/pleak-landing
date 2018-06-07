@@ -15,7 +15,6 @@ export const ButtonStyle = styled.a`
   font-family: 'inter-medium', sans-serif;
   border-radius: 204px;
   text-align: center;
-  transform: translateY(0);
   transition: all 0.15s ease;
   ${ media.mobile`
     display: block;
@@ -27,7 +26,6 @@ export const ButtonStyle = styled.a`
     ` }
   }
   &:hover {
-    transform: translateY(-2px);
     box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
     border-color: ${white};
   }
@@ -35,7 +33,4 @@ export const ButtonStyle = styled.a`
     vertical-align: -4px;
     margin-right: 5px;
   }
-  /* ${ media.mobile`
-    margin: 0 24px;
-  ` } */
 `
