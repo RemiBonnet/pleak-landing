@@ -4,7 +4,7 @@ import { media } from '../../styles/responsive'
 
 export const HeroBannerStyle = styled.div`
   width: 100%;
-  height: calc(100vh - 150px);
+  height: calc(100vh - 100px);
   background: blue;
   ${ media.large`
     padding: 0 24px;

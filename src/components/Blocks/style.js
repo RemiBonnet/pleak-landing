@@ -9,6 +9,14 @@ export const BlocksStyle = styled.div`
     max-width: 1170px;
     height: 470px;
     border-bottom: 1px solid ${mercury};
+    ${ media.tablet`
+      margin: 0 24px;
+    ` }
+    ${ media.mobile`
+      height: inherit;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    ` }
     &:last-child {
       border-bottom: 0;
     }
@@ -16,6 +24,12 @@ export const BlocksStyle = styled.div`
       .Block {
         &__img div {
           right: 130px;
+          ${ media.tablet`
+            right: 100px;
+          ` }
+          ${ media.mobile`
+            right: inherit;
+          `}
         }
       }
     }
@@ -26,6 +40,12 @@ export const BlocksStyle = styled.div`
         }
         &__img div {
           left: 130px;
+          ${ media.tablet`
+            left: 100px;
+          ` }
+          ${ media.mobile`
+            left: inherit;
+          `}
         }
       }
     }
@@ -34,6 +54,10 @@ export const BlocksStyle = styled.div`
       display: inline-flex;
       width: 50%;
       height: 100%;
+      ${ media.mobile`
+        width: 100%;
+        height: inherit;
+      ` }
       & > div {
         position: absolute;
         top: 50%;
@@ -41,6 +65,14 @@ export const BlocksStyle = styled.div`
         width: 270px;
         height: 270px;
         background: ${blue};
+        ${ media.mobile`
+          position: inherit;
+          display: block;
+          margin: 0 auto;
+          transform: inherit;
+          width: 200px;
+          height: 200px;
+        ` }
       }
     }
     &__content {
@@ -49,12 +81,25 @@ export const BlocksStyle = styled.div`
       width: 50%;
       height: 100%;
       vertical-align: top;
+      ${ media.mobile`
+        width: 100%;
+        height: inherit;
+      ` }
       & > div {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
         max-width: 470px;
         color: ${fiord};
+        ${ media.mobile`
+          width: 100%;
+          position: inherit;
+          display: block;
+          margin: 0 auto;
+          transform: inherit;
+          margin-top: 20px;
+          max-width: inherit;
+        ` }
         h2 {
           font-family: 'inter-bold';
           font-size: 28px;
