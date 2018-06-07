@@ -77,7 +77,8 @@ export const SliderStyle = styled.div`
                   position: absolute;
                   opacity: 0;
                   background: ${electricViolet};
-                  width: 0;
+                  width: 100%;
+                  transform: scaleY(1);
                   height: 1px;
                 }
               }

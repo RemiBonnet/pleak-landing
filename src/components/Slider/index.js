@@ -25,17 +25,18 @@ class Slider extends Component {
     timers.forEach(timer => {
       TweenLite.set(timer, {
         opacity: 0,
-        width: 0
+        scaleX: 0,
+        transformOrigin: 'left'
       })
     })
 
     contents[nbSlide].classList.remove('Slide__content--opacity')
     slides[nbSlide].style.opacity = '1'
 
-    TweenLite.fromTo(timers[nbSlide], 15, {
+    TweenLite.fromTo(timers[nbSlide], 10, {
       opacity: '1'
     }, {
-      width: '100%',
+      scaleX: 1,
       onComplete: () => {
         if (nbSlide === (slides.length - 1))
           nbSlide = -1
