@@ -8,7 +8,7 @@ const HeroBanner = () => (
       <div className="HeroBanner__container">
         <div className="HeroBanner__top">
           <h1>
-            Grow your application's <br />
+            Grow your application’s <br />
             business by monitoring <br /> 
             your performance
           </h1>

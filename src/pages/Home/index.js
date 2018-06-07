@@ -5,6 +5,7 @@ import Navigation from '../../components/Navigation'
 import HeroBanner from '../../components/HeroBanner'
 import Slider from '../../components/Slider'
 import FeaturesMobile from '../../components/FeaturesMobile'
+import Blocks from '../../components/Blocks'
 
 const layout = layoutGenerator({
   mobile: 0,
@@ -32,10 +33,31 @@ const sliderContent = [
   },
 ]
 
+const blocksContent = [
+  {
+    title: 'Understand how your application perform in complex real‑world environments',
+    paragraph: 'Get new KPI’s from your apps in production and improve your customers user experience by measuring segmented performance.',
+    img: ''
+  },
+  {
+    title: 'Measure the link between performance slowdown and your business',
+    paragraph: 'Confront apps metrics with data from your marketing and business analytics platforms. Get a precise estimation of performance impact overtime.',
+    img: ''
+  },
+  {
+    title: 'Ensure your product sustainability by following the technical quality over time',
+    paragraph: 'Each release is an opportunity for new features update and performances check up. Be proactive and keep your product quality level at every key steps of its evolution.',
+    img: ''
+  }
+]
+
 const Home = () => (
   <div>
     <Navigation />
     <HeroBanner />
+    <Blocks 
+      content={blocksContent}
+    />
     <OnDesktop>
       <Slider
         content={sliderContent}
