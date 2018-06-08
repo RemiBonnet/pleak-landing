@@ -27,6 +27,10 @@ export const BlockBetaStyle = styled.div`
       line-height: 55px;
       font-family: 'inter-bold';
       margin-bottom: 13px;
+      ${ media.mobile`
+        font-size: 32px;
+        line-height: 40px;
+      ` }
     }
     p {
       margin: 0 auto;
