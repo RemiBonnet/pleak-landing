@@ -52,9 +52,9 @@ const BlocksColor = () => (
       <div>
         <iframe
         title="Pleak library repository"
-        src="https://ghbtns.com/github-btn.html?user=RemiBonnet&repo=TeslaSpectre&type=watch&count=true" scrolling="0" width="auto" height="30px"></iframe>
+        src="https://ghbtns.com/github-btn.html?user=pleak&repo=pleak-react-perf-monitor&type=watch&count=true" scrolling="0" width="auto" height="30px"></iframe>
         <h2>What Pleak does is up to your contributions</h2>
-        <p>Open source SDK give the possibility to evolve the product in your own needs. We supporting the community by publishing awesome projects.</p>
+        <p>Open source SDK give the possibility to make Pleak evolve for your own needs. We are fully open to feedback from our dear users.</p>
         <Button
           label="Github"
           url=""

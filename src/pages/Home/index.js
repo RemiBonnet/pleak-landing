@@ -21,12 +21,12 @@ const OnMobile = layout.is('mobile')
 const sliderContent = [
   {
     title: 'Easy to use dashboard',
-    paragraph: 'Consistently track progress all your key metrics in one place with efficiency and visibility.',
+    paragraph: 'Consistently track the progress of all your key metrics in one place with efficiency and visibility.',
     img: ''
   },
   {
     title: 'Real time segmentation',
-    paragraph: 'Use Pleak to capture every interaction users have with your app and collect essential.',
+    paragraph: 'Use Pleak to capture every interaction users have with your app and collect essential performance indicators.',
     img: ''
   },
   {
@@ -39,12 +39,12 @@ const sliderContent = [
 const blocksContent = [
   {
     title: 'Understand how your application perform in complex real‑world environments',
-    paragraph: 'Get new KPI’s from your apps in production and improve your customers user experience by measuring segmented performance.',
+    paragraph: 'Get new key performance indicators from your apps in production and improve your customers user experience by measuring segmented performance.',
     img: ''
   },
   {
-    title: 'Measure the link between performance slowdown and your business',
-    paragraph: 'Confront apps metrics with data from your marketing and business analytics platforms. Get a precise estimation of performance impact overtime.',
+    title: 'Measure the link between technical performance and your business',
+    paragraph: 'Confront apps metrics with data from your marketing and business analytics platforms. Get a clear estimation of the impact of your app’s performance over time.',
     img: ''
   },
   {

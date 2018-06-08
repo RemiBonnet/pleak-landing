@@ -13,8 +13,8 @@ const HeroBanner = () => (
             your performance
           </h1>
           <p>
-            Monitor technical performance of your applications to provide you essential metrics set and take 
-            a customer-centric approach to decision-making.
+            Monitor technical performance of your applications to get essential metrics dataset and
+            take a customer-centric approach to decision-making.
           </p>
         </div>
         <div className="HeroBanner__bottom">
