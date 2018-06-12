@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Redirect } from 'react-router-dom'
+import Helmet from 'react-helmet'
+import { injectIntl } from 'react-intl'
 import { layoutGenerator } from 'react-break'
-import { ENABLED_LOCALES } from '../../constants/locales'
+import { ENABLED_LOCALES, DEFAULT_LOCALE } from '../../constants/locales'
 import { sizes } from '../../styles/responsive.js'
 import { LanguageContext } from '../../state'
 import Navigation from '../../components/Navigation'
@@ -95,28 +97,72 @@ class Home extends React.Component {
     }
 
     return (
-      <div>
-        <Navigation />
-        <HeroBanner />
-        <Blocks content={blocksContent} />
-        <OnDesktop>
-          <Slider content={sliderContent} />
-        </OnDesktop>
-        <OnMobile>
-          <FeaturesMobile content={sliderContent} />
-        </OnMobile>
-        <BlocksColor />
-        <BlockBeta />
-        <Footer />
-      </div>
+      <Fragment>
+        <div>
+          <Navigation />
+          <HeroBanner />
+          <Blocks content={blocksContent} />
+          <OnDesktop>
+            <Slider content={sliderContent} />
+          </OnDesktop>
+          <OnMobile>
+            <FeaturesMobile content={sliderContent} />
+          </OnMobile>
+          <BlocksColor />
+          <BlockBeta />
+          <Footer />
+        </div>
+
+        {/* Helmet expects strings and not React components, so we need to use
+            `props.intl.formatMessage` passed by the `injectIntl` HOC. */}
+        <Helmet titleTemplate="Pleak – %s">
+          <html lang={this.props.locale} />
+
+          <title>
+            {this.props.intl.formatMessage({ id: 'landing.title' })}
+          </title>
+
+          <meta
+            name="description"
+            content={this.props.intl.formatMessage({
+              id: 'landing.description'
+            })}
+          />
+          <meta
+            property="og:title"
+            content={this.props.intl.formatMessage({ id: 'landing.title' })}
+          />
+          <meta property="og:url" content={window.location.href} />
+
+          {ENABLED_LOCALES.map(locale => {
+            // If we don’t have a locale in the URL, that means we’re already
+            // on the default locale page. We don’t need to add an `alternate`
+            // meta tag.
+            const hasNoLocale = !this.props.match.params.locale
+            const isDefaultLocale = hasNoLocale && locale === DEFAULT_LOCALE
+            const isCurrentLocale = locale === this.props.locale
+            const shouldAddAlternateLink = !isDefaultLocale && !isCurrentLocale
+
+            return (
+              shouldAddAlternateLink && (
+                <link
+                  rel="alternate"
+                  href={`${window.location.origin}/${locale}`}
+                  hrefLang={locale}
+                />
+              )
+            )
+          })}
+        </Helmet>
+      </Fragment>
     )
   }
 }
 
-export default props => (
+export default injectIntl(props => (
   <LanguageContext.Consumer>
     {({ switchLanguage, locale }) => (
       <Home {...props} locale={locale} switchLanguage={switchLanguage} />
     )}
   </LanguageContext.Consumer>
-)
+))
