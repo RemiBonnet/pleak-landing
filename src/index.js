@@ -51,9 +51,14 @@ class App extends React.Component {
 }
 
 const init = async () => {
-  const defaultLocale = !!navigator.languages
-    ? navigator.languages[0].slice(0, 2) // Slice to only retrieve the 2 characters locale from locales such as `en_EN`
-    : DEFAULT_LOCALE
+  // Slice the two first characters to retrieve the “short” locale from “long”
+  // locales such as `en_EN`.
+  const browserLocale =
+    !!navigator.languages && navigator.languages[0].slice(0, 2)
+  const defaultLocale =
+    browserLocale && ENABLED_LOCALES.includes(browserLocale)
+      ? browserLocale
+      : DEFAULT_LOCALE
   const translations = await fetchTranslations(defaultLocale)
 
   ReactDOM.render(
