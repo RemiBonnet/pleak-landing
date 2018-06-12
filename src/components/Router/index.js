@@ -6,14 +6,11 @@ import baseStyles from '../../styles/'
 class Router extends Component {
   render() {
     baseStyles()
-    return (
-      <div>
-        <Route
-          exact
-          path="/"
-          component={Home}
-        />
-      </div>
+
+    return this.props.children(
+      <Route path="/:locale/">
+        <Route component={Home} exact />
+      </Route>
     )
   }
 }
