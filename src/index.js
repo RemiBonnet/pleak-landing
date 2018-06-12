@@ -11,7 +11,7 @@ class App extends React.Component {
     super(props)
 
     this.state = {
-      locale: props.defaultLocale,
+      locale: props.locale,
       translations: props.translations
     }
   }
@@ -56,7 +56,7 @@ const init = async () => {
   const translations = await fetchTranslations(defaultLocale)
 
   ReactDOM.render(
-    <App translations={translations} defaultLocale={defaultLocale} />,
+    <App translations={translations} locale={defaultLocale} />,
     document.getElementById('root')
   )
 }
