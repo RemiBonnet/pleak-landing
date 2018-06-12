@@ -1,6 +1,7 @@
 import React from 'react'
+import { DEFAULT_LOCALE } from './constants/locales'
 
 export const LanguageContext = React.createContext({
-  locale: 'en',
+  locale: DEFAULT_LOCALE,
   switchLanguage: () => {}
 })

@@ -1,6 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { NavigationStyle } from './style.js'
-import { LanguageContext } from '../../state'
 import Button from '../Button'
 
 const Navigation = () => (
@@ -27,11 +27,11 @@ const Navigation = () => (
         </a>
       </div>
 
-      <LanguageContext.Consumer>
-        {({ switchLanguage }) => (
-          <Button label="To french" onClick={() => switchLanguage('fr')} />
-        )}
-      </LanguageContext.Consumer>
+      <Link to="/fr">
+        <span role="img" aria-label="Switch to french">
+          🇫🇷
+        </span>
+      </Link>
     </div>
   </NavigationStyle>
 )

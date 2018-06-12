@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom'
 import { layoutGenerator } from 'react-break'
 import { ENABLED_LOCALES } from '../../constants/locales'
 import { sizes } from '../../styles/responsive.js'
+import { LanguageContext } from '../../state'
 import Navigation from '../../components/Navigation'
 import HeroBanner from '../../components/HeroBanner'
 import Slider from '../../components/Slider'
@@ -65,10 +66,27 @@ const blocksContent = [
 ]
 
 class Home extends React.Component {
-  shouldRedirect() {
-    const locale = this.props.match.params.locale
+  constructor(props) {
+    super(props)
 
-    return locale && !ENABLED_LOCALES.includes(locale)
+    // Switch the language on the initial render in case the user’s browser
+    // locale doesn’t match the locale of the page they’re trying to render.
+    this.props.switchLanguage(this.props.match.params.locale)
+  }
+
+  componentDidUpdate() {
+    // Switch the language on subsequent renders in case the locale in the URL
+    // has changed.
+    this.props.switchLanguage(this.props.match.params.locale)
+  }
+
+  shouldRedirect() {
+    const routerLocale = this.props.match.params.locale
+
+    // If the user tries to access the homepage with a locale that isn’t
+    // supported, redirect to the index page so that they see the page in the
+    // default language.
+    return routerLocale && !ENABLED_LOCALES.includes(routerLocale)
   }
 
   render() {
@@ -95,4 +113,10 @@ class Home extends React.Component {
   }
 }
 
-export default Home
+export default props => (
+  <LanguageContext.Consumer>
+    {({ switchLanguage, locale }) => (
+      <Home {...props} locale={locale} switchLanguage={switchLanguage} />
+    )}
+  </LanguageContext.Consumer>
+)

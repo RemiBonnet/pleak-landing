@@ -2,9 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 import { IntlProvider } from 'react-intl'
-import Router from './components/Router'
+import { DEFAULT_LOCALE, ENABLED_LOCALES } from './constants/locales'
 import fetchTranslations from './helpers/fetchTranslations'
 import { LanguageContext } from './state'
+import Router from './components/Router'
 
 class App extends React.Component {
   constructor(props) {
@@ -16,8 +17,8 @@ class App extends React.Component {
     }
   }
 
-  switchLanguage = async locale => {
-    if (this.state.locale !== locale) {
+  switchLanguage = async (locale = DEFAULT_LOCALE) => {
+    if (this.state.locale !== locale && ENABLED_LOCALES.includes(locale)) {
       const translations = await fetchTranslations(locale)
 
       this.setState({ locale, translations })
@@ -51,8 +52,8 @@ class App extends React.Component {
 
 const init = async () => {
   const defaultLocale = !!navigator.languages
-    ? navigator.languages[0].slice(0, 2)
-    : 'en'
+    ? navigator.languages[0].slice(0, 2) // Slice to only retrieve the 2 characters locale from locales such as `en_EN`
+    : DEFAULT_LOCALE
   const translations = await fetchTranslations(defaultLocale)
 
   ReactDOM.render(
