@@ -2,7 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 import { IntlProvider } from 'react-intl'
-import { DEFAULT_LOCALE, ENABLED_LOCALES } from './constants/locales'
+import { DEFAULT_LOCALE } from './constants/translations'
+import isEnabledLocale from './helpers/isEnabledLocale'
+import fetchEnabledLocales from './helpers/fetchEnabledLocales'
 import fetchTranslations from './helpers/fetchTranslations'
 import { LanguageContext } from './state'
 import Router from './components/Router'
@@ -18,7 +20,10 @@ class App extends React.Component {
   }
 
   switchLanguage = async (locale = DEFAULT_LOCALE) => {
-    if (this.state.locale !== locale && ENABLED_LOCALES.includes(locale)) {
+    if (
+      this.state.locale !== locale &&
+      isEnabledLocale(this.props.enabledLocales, locale)
+    ) {
       const translations = await fetchTranslations(locale)
 
       this.setState({ locale, translations })
@@ -29,6 +34,7 @@ class App extends React.Component {
     return (
       <LanguageContext.Provider
         value={{
+          enabledLocales: this.props.enabledLocales,
           locale: this.state.locale,
           switchLanguage: this.switchLanguage
         }}
@@ -51,18 +57,23 @@ class App extends React.Component {
 }
 
 const init = async () => {
+  const enabledLocales = await fetchEnabledLocales()
   // Slice the two first characters to retrieve the “short” locale from “long”
   // locales such as `en_EN`.
   const browserLocale =
     !!navigator.languages && navigator.languages[0].slice(0, 2)
   const defaultLocale =
-    browserLocale && ENABLED_LOCALES.includes(browserLocale)
+    browserLocale && isEnabledLocale(enabledLocales, browserLocale)
       ? browserLocale
       : DEFAULT_LOCALE
   const translations = await fetchTranslations(defaultLocale)
 
   ReactDOM.render(
-    <App translations={translations} locale={defaultLocale} />,
+    <App
+      enabledLocales={enabledLocales}
+      locale={defaultLocale}
+      translations={translations}
+    />,
     document.getElementById('root')
   )
 }

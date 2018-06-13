@@ -3,7 +3,8 @@ import { withRouter } from 'react-router-dom'
 import Helmet from 'react-helmet'
 import { injectIntl } from 'react-intl'
 import { layoutGenerator } from 'react-break'
-import { ENABLED_LOCALES, DEFAULT_LOCALE } from '../../constants/locales'
+import { DEFAULT_LOCALE } from '../../constants/translations'
+import isEnabledLocale from '../../helpers/isEnabledLocale'
 import { sizes } from '../../styles/responsive.js'
 import { LanguageContext } from '../../state'
 import HomeContainer from '../../components/HomeContainer'
@@ -97,7 +98,9 @@ class Home extends React.Component {
   shouldRedirectToIndex() {
     const routerLocale = this.props.match.params.locale
 
-    return routerLocale && !ENABLED_LOCALES.includes(routerLocale)
+    return (
+      routerLocale && !isEnabledLocale(this.props.enabledLocales, routerLocale)
+    )
   }
 
   render() {
@@ -139,22 +142,22 @@ class Home extends React.Component {
           />
           <meta property="og:url" content={window.location.href} />
 
-          {ENABLED_LOCALES.map(locale => {
+          {this.props.enabledLocales.map(({ code: localeCode }) => {
             // If we don’t have a locale in the URL, that means we’re already
             // on the default locale page. We don’t need to add an `alternate`
             // meta tag.
             const hasNoLocale = !this.props.match.params.locale
-            const isDefaultLocale = hasNoLocale && locale === DEFAULT_LOCALE
-            const isCurrentLocale = locale === this.props.locale
+            const isDefaultLocale = hasNoLocale && localeCode === DEFAULT_LOCALE
+            const isCurrentLocale = localeCode === this.props.locale
             const shouldAddAlternateLink = !isDefaultLocale && !isCurrentLocale
 
             return (
               shouldAddAlternateLink && (
                 <link
-                  key={locale}
+                  key={localeCode}
                   rel="alternate"
-                  href={`${window.location.origin}/${locale}`}
-                  hrefLang={locale}
+                  href={`${window.location.origin}/${localeCode}`}
+                  hrefLang={localeCode}
                 />
               )
             )
@@ -168,9 +171,7 @@ class Home extends React.Component {
 export default withRouter(
   injectIntl(props => (
     <LanguageContext.Consumer>
-      {({ switchLanguage, locale }) => (
-        <Home {...props} locale={locale} switchLanguage={switchLanguage} />
-      )}
+      {languageContext => <Home {...props} {...languageContext} />}
     </LanguageContext.Consumer>
   ))
 )
