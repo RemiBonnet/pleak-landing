@@ -6,6 +6,7 @@ import { layoutGenerator } from 'react-break'
 import { ENABLED_LOCALES, DEFAULT_LOCALE } from '../../constants/locales'
 import { sizes } from '../../styles/responsive.js'
 import { LanguageContext } from '../../state'
+import HomeContainer from '../../components/HomeContainer'
 import Navigation from '../../components/Navigation'
 import HeroBanner from '../../components/HeroBanner'
 import Slider from '../../components/Slider'
@@ -98,7 +99,7 @@ class Home extends React.Component {
 
     return (
       <Fragment>
-        <div>
+        <HomeContainer>
           <Navigation />
           <HeroBanner />
           <Blocks content={blocksContent} />
@@ -111,7 +112,7 @@ class Home extends React.Component {
           <BlocksColor />
           <BlockBeta />
           <Footer />
-        </div>
+        </HomeContainer>
 
         {/* Helmet expects strings and not React components, so we need to use
             `props.intl.formatMessage` passed by the `injectIntl` HOC. */}
