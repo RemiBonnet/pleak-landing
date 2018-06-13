@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { Redirect } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import Helmet from 'react-helmet'
 import { injectIntl } from 'react-intl'
 import { layoutGenerator } from 'react-break'
@@ -72,9 +72,20 @@ class Home extends React.Component {
   constructor(props) {
     super(props)
 
-    // Switch the language on the initial render in case the user’s browser
-    // locale doesn’t match the locale of the page they’re trying to render.
-    this.props.switchLanguage(this.props.match.params.locale)
+    const { locale, match, history } = this.props
+
+    // If the user tries to access the homepage with a locale that isn’t
+    // supported, redirect to the index page so that they see the page in the
+    // default language.
+    if (this.shouldRedirectToIndex()) {
+      return history.replace('/')
+    }
+
+    // Redirect the user to the correct page in case their browser’s locale
+    // doesn’t match the locale of the page they’re trying to access.
+    if (locale && match.params.locale !== locale) {
+      history.replace('/' + locale)
+    }
   }
 
   componentDidUpdate() {
@@ -83,20 +94,13 @@ class Home extends React.Component {
     this.props.switchLanguage(this.props.match.params.locale)
   }
 
-  shouldRedirect() {
+  shouldRedirectToIndex() {
     const routerLocale = this.props.match.params.locale
 
-    // If the user tries to access the homepage with a locale that isn’t
-    // supported, redirect to the index page so that they see the page in the
-    // default language.
     return routerLocale && !ENABLED_LOCALES.includes(routerLocale)
   }
 
   render() {
-    if (this.shouldRedirect()) {
-      return <Redirect to="/" />
-    }
-
     return (
       <Fragment>
         <HomeContainer>
@@ -147,6 +151,7 @@ class Home extends React.Component {
             return (
               shouldAddAlternateLink && (
                 <link
+                  key={locale}
                   rel="alternate"
                   href={`${window.location.origin}/${locale}`}
                   hrefLang={locale}
@@ -160,10 +165,12 @@ class Home extends React.Component {
   }
 }
 
-export default injectIntl(props => (
-  <LanguageContext.Consumer>
-    {({ switchLanguage, locale }) => (
-      <Home {...props} locale={locale} switchLanguage={switchLanguage} />
-    )}
-  </LanguageContext.Consumer>
-))
+export default withRouter(
+  injectIntl(props => (
+    <LanguageContext.Consumer>
+      {({ switchLanguage, locale }) => (
+        <Home {...props} locale={locale} switchLanguage={switchLanguage} />
+      )}
+    </LanguageContext.Consumer>
+  ))
+)
