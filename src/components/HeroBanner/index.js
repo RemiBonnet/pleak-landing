@@ -20,12 +20,12 @@ const HeroBanner = () => (
         <div className="HeroBanner__bottom">
           <Button
             label="Github"
-            url=""
             github
+            noBg
           />
           <Button
             label="Request a demo"
-            url=""
+            demo
           />
         </div>
       </div>

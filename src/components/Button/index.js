@@ -1,13 +1,22 @@
 import React from 'react'
+import TweenLite, { Expo } from 'gsap'
+import 'gsap/src/uncompressed/plugins/ScrollToPlugin'
 import { ButtonStyle } from './style.js'
 
 const handleClick = props => {
   if (props.github) window.open('https://github.com/pleak', '_blank')
+  if (props.documentation) window.open('https://github.com/pleak/pleak-react-perf-monitor/blob/master/README.md', '_blank')
+  if (props.demo) {
+    TweenLite.to(window, 1, {
+      scrollTo: '.Beta',
+      ease: Expo.easeOut
+    })
+  }
 }
 
 const Button = props => (
   <ButtonStyle
-    noBg={props.github || props.noBg}
+    noBg={props.noBg}
     onClick={() => handleClick(props)}>
     {props.github &&
       <svg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'>

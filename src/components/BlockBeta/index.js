@@ -4,7 +4,7 @@ import { BlockBetaStyle } from './style.js'
 
 const BlockBeta = () => (
   <BlockBetaStyle>
-    <div>
+    <div className="Beta">
       <h2>Join our Beta version</h2>
       <p>Interested about Pleak? Join our private Beta version by sending a request. With a minimal set up, monitor performance of all your application.</p>
       <BetaRegistration />

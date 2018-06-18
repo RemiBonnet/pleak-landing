@@ -43,7 +43,7 @@ const BlocksColor = () => (
         <p>Each app is different! Create, track and analyse custom metrics from tools integrations and empower your team to personalize monitoring.</p>
         <Button
           label="Documentation"
-          url=""
+          documentation
           noBg
         />
       </div>
@@ -57,8 +57,8 @@ const BlocksColor = () => (
         <p>Open source SDK give the possibility to make Pleak evolve for your own needs. We are fully open to feedback from our dear users.</p>
         <Button
           label="Github"
-          url=""
           github
+          noBg
         />
       </div>
     </div>

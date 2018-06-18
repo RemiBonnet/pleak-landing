@@ -7,14 +7,13 @@ const Navigation = () => (
     <div>
       <img src={process.env.PUBLIC_URL + '/logo-white.svg'} alt="Pleak logo" />
       <div className="Navigation__left">
-        <a className="Link" href="">Documentation</a>
+        <a className="Link" rel="noopener noreferrer" target="_blank" href="https://github.com/pleak/pleak-react-perf-monitor/blob/master/README.md">Documentation</a>
         <a className="Link" rel="noopener noreferrer" target="_blank" href="https://medium.com/pleak">Blog</a>
       </div>
       <div className="Navigation__right">
         <Button
-          label="Github"
-          url=""
-          github
+          label="Request a demo"
+          demo
         />
         <a href="http://pleak-dashboard.herokuapp.com/" className="Link">Sign in</a>
       </div>
