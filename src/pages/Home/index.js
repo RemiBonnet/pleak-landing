@@ -65,20 +65,16 @@ class Home extends React.Component {
   constructor(props) {
     super(props)
 
-    const { locale, match, history } = this.props
-
     // If the user tries to access the homepage with a locale that isn’t
     // supported, redirect to the index page so that they see the page in the
     // default language.
     if (this.shouldRedirectToIndex()) {
-      return history.replace('/')
+      return this.props.history.replace('/' + DEFAULT_LOCALE)
     }
 
-    // Redirect the user to the correct page in case their browser’s locale
-    // doesn’t match the locale of the page they’re trying to access.
-    if (locale && match.params.locale !== locale) {
-      history.replace('/' + locale)
-    }
+    // Switch the language on first render in case the user isn’t accessing the
+    // page in the default language.
+    this.props.switchLanguage(this.props.match.params.locale)
   }
 
   componentDidUpdate() {
@@ -91,7 +87,7 @@ class Home extends React.Component {
     const routerLocale = this.props.match.params.locale
 
     return (
-      routerLocale && !isEnabledLocale(this.props.enabledLocales, routerLocale)
+      !routerLocale || !isEnabledLocale(this.props.enabledLocales, routerLocale)
     )
   }
 
