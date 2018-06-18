@@ -32,7 +32,7 @@ const Footer = () => (
             </svg>
           </a>
           <div className="Languages">
-            <a className="active" href="/en">EN</a><span>/</span><a href="/fr">FR</a>
+            <a href="/en">EN</a><span>/</span><a href="/fr">FR</a>
           </div>
         </div>
       </div>
