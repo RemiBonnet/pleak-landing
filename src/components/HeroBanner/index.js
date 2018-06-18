@@ -18,7 +18,6 @@ const HeroBanner = () => (
           </p>
         </div>
         <div className="HeroBanner__bottom">
-<<<<<<< HEAD
           <Button
             label="Github"
             github
@@ -28,10 +27,6 @@ const HeroBanner = () => (
             label="Request a demo"
             demo
           />
-=======
-          <Button label="Github" url="" github />
-          <Button label="Request a demo" url="" />
->>>>>>> 9c2e07688c5eb0aa6090495930af07a941ac95b1
         </div>
       </div>
     </div>
