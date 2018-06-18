@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { media } from '../../styles/responsive'
-import { fiord, blue, mercury } from '../../styles/colors'
+import { fiord, mercury } from '../../styles/colors'
 
 export const BlocksStyle = styled.div`
   .Block {
@@ -62,9 +62,11 @@ export const BlocksStyle = styled.div`
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        width: 270px;
-        height: 270px;
-        background: ${blue};
+        width: 500px;
+        height: auto;
+        svg {
+          width: 100%;
+        }
         ${ media.mobile`
           position: inherit;
           display: block;
