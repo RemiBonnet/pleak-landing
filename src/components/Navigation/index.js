@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { NavigationStyle } from './style.js'
 import Button from '../Button'
 
@@ -26,12 +25,6 @@ const Navigation = () => (
           Sign in
         </a>
       </div>
-
-      <Link to="/fr">
-        <span role="img" aria-label="Switch to french">
-          🇫🇷
-        </span>
-      </Link>
     </div>
   </NavigationStyle>
 )
