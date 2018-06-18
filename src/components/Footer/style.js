@@ -3,6 +3,7 @@ import { white15, black, white20, white } from '../../styles/colors'
 import { media } from '../../styles/responsive'
 
 export const FooterStyle = styled.div`
+  display: block;
   background: ${black};
   height: 265px;
   ${ media.mobile`
@@ -33,7 +34,7 @@ export const FooterStyle = styled.div`
       }
     }
     &__bottom {
-      padding-top: 59px;
+      padding-top: 20px;
       font-size: 16px;
       line-height: 25px;
       font-family: 'inter-regular';
@@ -68,6 +69,28 @@ export const FooterStyle = styled.div`
           margin-right: 20px;
           &:last-child {
             margin-right: 0;
+          }
+        }
+        .Languages {
+          position: relative;
+          top: 2px;
+          display: inline-block;
+          vertical-align: top;
+          color: ${white};
+          font-family: 'inter-regular';
+          font-size: 16px;
+          span {
+            opacity: 0.4;
+          }
+          a {
+            margin: 0 5px;
+            opacity: 0.4;
+            &.active {
+              opacity: 1;
+            }
+            &:hover {
+              opacity: 1;
+            }
           }
         }
       }
