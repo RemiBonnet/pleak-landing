@@ -1,4 +1,5 @@
 import React from 'react'
+import { FormattedMessage } from 'react-intl'
 import { layoutGenerator } from 'react-break'
 import { sizes } from '../../styles/responsive.js'
 import { BlocksStyle } from './style.js'
@@ -15,12 +16,12 @@ const Blocks = props => (
   <BlocksStyle>
     <div className="Block Block--right">
       <div className="Block__img">
-        <div></div>
+        <div />
       </div>
       <div className="Block__content">
         <div>
-          <h2>{props.content[0].title}</h2>
-          <p>{props.content[0].paragraph}</p>
+          <FormattedMessage id={props.content[0].title} tagName="h2" />
+          <FormattedMessage id={props.content[0].paragraph} tagName="p" />
         </div>
       </div>
     </div>
@@ -29,12 +30,12 @@ const Blocks = props => (
       <div className="Block  Block--left">
         <div className="Block__content">
           <div>
-            <h2>{props.content[1].title}</h2>
-            <p>{props.content[1].paragraph}</p>
+            <FormattedMessage id={props.content[1].title} tagName="h2" />
+            <FormattedMessage id={props.content[1].paragraph} tagName="p" />
           </div>
         </div>
         <div className="Block__img">
-          <div></div>
+          <div />
         </div>
       </div>
     </OnDesktop>
@@ -42,12 +43,12 @@ const Blocks = props => (
     <OnMobile>
       <div className="Block  Block--left">
         <div className="Block__img">
-          <div></div>
+          <div />
         </div>
         <div className="Block__content">
           <div>
-            <h2>{props.content[1].title}</h2>
-            <p>{props.content[1].paragraph}</p>
+            <FormattedMessage id={props.content[1].title} tagName="h2" />
+            <FormattedMessage id={props.content[1].paragraph} tagName="p" />
           </div>
         </div>
       </div>
@@ -55,12 +56,12 @@ const Blocks = props => (
 
     <div className="Block Block--right">
       <div className="Block__img">
-        <div></div>
+        <div />
       </div>
       <div className="Block__content">
         <div>
-          <h2>{props.content[2].title}</h2>
-          <p>{props.content[2].paragraph}</p>
+          <FormattedMessage id={props.content[2].title} tagName="h2" />
+          <FormattedMessage id={props.content[2].paragraph} tagName="p" />
         </div>
       </div>
     </div>

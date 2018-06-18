@@ -1,4 +1,5 @@
 import React from 'react'
+import { FormattedMessage } from 'react-intl'
 import { FooterStyle } from './style.js'
 
 const Footer = () => (
@@ -6,12 +7,12 @@ const Footer = () => (
     <div className="Footer">
       <div className="Footer__top">
         <img src={process.env.PUBLIC_URL + '/logo-white.svg'} alt="Pleak logo" />
-        <p>Copyright © 2018 Pleak Inc. All rights reserved.</p>
+        <FormattedMessage id="ui.copyright" tagName="p" />
       </div>
       <div className="Footer__bottom">
         <div className="Footer__bottom__links">
-          <a href="">Terms of Service</a>
-          <a href="mailto:hello@getpleak.io">Contact</a>
+          <a href=""><FormattedMessage id="ui.terms" /></a>
+          <a href="mailto:hello@getpleak.io"><FormattedMessage id="ui.contact" /></a>
         </div>
         <div className="Footer__bottom__rs">
           <a rel="noopener noreferrer" target="_blank" href="https://github.com/pleak">

@@ -1,6 +1,6 @@
 import React from 'react'
 import { HeroBannerStyle } from './style.js'
-import { FormattedHTMLMessage } from 'react-intl'
+import { FormattedMessage } from 'react-intl'
 import Button from '../Button/index.js'
 
 const HeroBanner = () => (
@@ -9,17 +9,15 @@ const HeroBanner = () => (
       <div className="HeroBanner__container">
         <div className="HeroBanner__top">
           <h1>
-            <FormattedHTMLMessage id="hero.title" />
+            <FormattedMessage id="hero.title" />
           </h1>
           <p>
-            Monitor technical performance of your applications to get essential
-            metrics datasets and take a customer-centric approach to
-            decision-making.
+            <FormattedMessage id="hero.paragraph" />
           </p>
         </div>
         <div className="HeroBanner__bottom">
           <Button label="Github" url="" github />
-          <Button label="Request a demo" url="" />
+          <Button labelId="ui.request_demo" url="" />
         </div>
       </div>
     </div>

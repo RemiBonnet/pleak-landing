@@ -1,4 +1,5 @@
 import React from 'react'
+import { FormattedMessage } from 'react-intl'
 import { NavigationStyle } from './style.js'
 import Button from '../Button'
 
@@ -8,7 +9,7 @@ const Navigation = () => (
       <img src={process.env.PUBLIC_URL + '/logo-white.svg'} alt="Pleak logo" />
       <div className="Navigation__left">
         <a className="Link" href="">
-          Documentation
+          <FormattedMessage id="ui.documentation" />
         </a>
         <a
           className="Link"
@@ -16,13 +17,13 @@ const Navigation = () => (
           target="_blank"
           href="https://medium.com/pleak"
         >
-          Blog
+          <FormattedMessage id="ui.blog" />
         </a>
       </div>
       <div className="Navigation__right">
         <Button label="Github" url="" github />
         <a href="http://pleak-dashboard.herokuapp.com/" className="Link">
-          Sign in
+          <FormattedMessage id="ui.sign_in" />
         </a>
       </div>
     </div>
