@@ -5,7 +5,7 @@ import Button from '../Button'
 const Navigation = () => (
   <NavigationStyle>
     <div>
-      <img src={process.env.PUBLIC_URL + '/logo-white.svg'} alt="Pleak logo" />
+      <img src={process.env.PUBLIC_URL + '/logo-blue.svg'} alt="Pleak logo" />
       <div className="Navigation__left">
         <a className="Link" rel="noopener noreferrer" target="_blank" href="https://github.com/pleak/pleak-react-perf-monitor/blob/master/README.md">Documentation</a>
         <a className="Link" rel="noopener noreferrer" target="_blank" href="https://medium.com/pleak">Blog</a>

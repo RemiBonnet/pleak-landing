@@ -7,7 +7,7 @@ export const BlocksStyle = styled.div`
     display: block;
     margin: 0 auto;
     max-width: 1170px;
-    height: 470px;
+    height: 490px;
     border-bottom: 1px solid ${mercury};
     ${ media.tablet`
       margin: 0 24px;

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { white } from '../../styles/colors'
+import { fiord } from '../../styles/colors'
 import { media } from '../../styles/responsive'
 
 export const NavigationStyle = styled.div`
@@ -18,6 +18,7 @@ export const NavigationStyle = styled.div`
     margin: 0 auto;
     margin-top: 55px;
     img {
+      width: 117px;
       margin-right: 55px;
       ${ media.mobile`
         margin-right: 30px;
@@ -26,7 +27,7 @@ export const NavigationStyle = styled.div`
     .Link {
       margin-right: 35px;
       text-decoration: none;
-      color: ${white};
+      color: ${fiord};
       font-family: 'inter-regular';
       transition: opacity 0.2s ease;
       ${ media.mobile`

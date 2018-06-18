@@ -12,7 +12,7 @@ const HeroBanner = () => (
             <FormattedHTMLMessage id="hero.title" />
           </h1>
           <p>
-            Monitor technical performance of your applications to get essential
+            Milliseconds are money. Monitor technical performance of your applications to get essential
             metrics datasets and take a customer-centric approach to
             decision-making.
           </p>
@@ -21,6 +21,7 @@ const HeroBanner = () => (
           <Button
             label="Github"
             github
+            dark
             noBg
           />
           <Button
