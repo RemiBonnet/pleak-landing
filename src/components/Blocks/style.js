@@ -9,6 +9,7 @@ export const BlocksStyle = styled.div`
     max-width: 1170px;
     height: 490px;
     border-bottom: 1px solid ${mercury};
+    padding: 0 70px;
     ${ media.tablet`
       margin: 0 24px;
     ` }
@@ -23,7 +24,7 @@ export const BlocksStyle = styled.div`
     &--right {
       .Block {
         &__img div {
-          right: 130px;
+          right: 100px;
           ${ media.large`
             right: 100px;
           ` }
@@ -39,7 +40,7 @@ export const BlocksStyle = styled.div`
           right: 0;
         }
         &__img div {
-          left: 130px;
+          left: 100px;
           ${ media.tablet`
             left: 100px;
           ` }
@@ -52,7 +53,7 @@ export const BlocksStyle = styled.div`
     &__img {
       position: relative;
       display: inline-flex;
-      width: 50%;
+      width: 60%;
       height: 100%;
       ${ media.mobile`
         width: 100%;
@@ -89,7 +90,7 @@ export const BlocksStyle = styled.div`
     &__content {
       position: relative;
       display: inline-flex;
-      width: 50%;
+      width: 40%;
       height: 100%;
       vertical-align: top;
       ${ media.mobile`
