@@ -1,29 +1,67 @@
 import styled from 'styled-components'
-import { gray, white2, white } from '../../styles/colors'
+import { fiord } from '../../styles/colors'
 import { media } from '../../styles/responsive'
 
 export const NavigationStyle = styled.div`
+  position: absolute;
+  top: 0;
   display: block;
-  background: ${white};
   width: 100%;
   height: 80px;
-  border-bottom: 1px solid ${white2};
   z-index: 2;
-  ${ media.tablet`
+  ${ media.large`
     padding: 0 24px;
-  ` }
-  h1 {
-    font-family: 'inter-regular', sans-serif;
-    display: inline-block;
-    font-size: 20px;
-    line-height: 80px;
-    color: ${gray};
-  }
-  img {
+  `}
+  & > div {
     position: relative;
-    top: 2px;
-    width: 20px;
-    height: auto;
-    margin-right: 10px;
+    max-width: 1170px;
+    margin: 0 auto;
+    margin-top: 55px;
+    img {
+      width: 117px;
+      margin-right: 55px;
+      ${ media.mobile`
+        margin-right: 30px;
+      `}
+    }
+    .Link {
+      margin-right: 35px;
+      text-decoration: none;
+      color: ${fiord};
+      font-family: 'inter-regular';
+      transition: opacity 0.2s ease;
+      ${ media.mobile`
+        margin-right: 15px;
+        line-height: 26px;
+      `}
+      &:hover {
+        opacity: 0.4;
+      }
+      &:last-child {
+        margin-right: 15px;
+        ${ media.mobile`
+          margin-right: 0;
+        ` }
+      }
+    }
+    .Navigation__left {
+      display: inline-block;
+      ${ media.mobile`
+        float: right;
+        margin-top: 2px;
+      ` }
+    }
+    .Navigation__right {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      a {
+        margin-right: 40px;
+      }
+      ${ media.mobile`
+        display: none;
+      ` }
+    }
   }
 `

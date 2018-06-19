@@ -1,69 +1,74 @@
 import styled from 'styled-components'
-import { white2, gray } from '../../styles/colors'
+import { fiord, zircon } from '../../styles/colors'
 import { media } from '../../styles/responsive'
 
 export const HeroBannerStyle = styled.div`
-  position: relative;
   width: 100%;
-  height: calc(80vh - 80px);
-  border-bottom: 1px solid ${white2};
-  ${ media.mobile`
-    height: 80vh;
+  height: calc(100vh - 100px);
+  background: ${zircon};
+  ${ media.large`
+    padding: 0 24px;
   ` }
-  .Container {
-    z-index: 2;
-    width: 100%;
-    position: absolute;
-    top: calc(50% - 10px);
-    left: 50%;
-    transform: translate(-50%, -50%);
-    ${ media.tablet`
-      padding: 0 24px;
-    ` }
-    ${ media.mobile`
-      width: 100%;
-      padding: 0 24px;
-      top: 50%;
-    ` }
-    h2  {
-      font-family: 'inter-medium';
-      font-size: 45px;
-      line-height: 55px;
-      ${ media.mobile`
-        font-size: 26px;
-        line-height: 32px;
-        br { display: none; }
-      ` }
-    }
-    p {
-      font-family: 'inter-regular';
-      margin-top: 20px;
-      color: ${gray};
-      font-size: 16px;
-      line-height: 25px;
-      margin-bottom: 45px;
-      ${ media.mobile`
-        margin-bottom: 65px;
-      ` }
-    }
-  }
-  .Image {
+  ${ media.mobile`
+    padding: 0 24px;
+    height: 700px;
+  ` }
+  .HeroBanner {
     position: relative;
-    width: 100%;
-    height: 100%;
     display: block;
-    max-width: 1440px;
-    margin-left: auto;
-    margin-right: auto;
-    ${ media.large`
-      display: none;
-    ` }
-    img {
-      pointer-events: none;
-      height: 80%;
+    margin: 0 auto;
+    max-width: 1170px;
+    height: 100%;
+    &__container {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &__top {
+      width: 100%;
+    }
+    &__bottom {
+      height: 65px;
+    }
+    &__img {
       position: absolute;
       right: 0;
-      bottom: 0;
+      top: 55%;
+      transform: translateY(-55%);
+      ${ media.tablet`
+        display: none;
+      ` }
+      svg {
+        width: 470px;
+      }
+    }
+    div {
+      h1 {
+        font-family: 'inter-bold';
+        color: ${fiord};
+        font-size: 45px;
+        line-height: 55px;
+        max-width: 570px;
+        ${ media.mobile`
+          font-size: 32px;
+          line-height: 40px;
+          br { display: none; }
+        ` }
+      }
+      p {
+        margin-top: 18px;
+        max-width: 470px;
+        font-family: 'inter-regular';
+        color: ${fiord};
+        font-size: 16px;
+        line-height: 25px;
+        margin-bottom: 25px;
+      }
+      a {
+        &:last-child {
+          margin-top: 25px;
+        }
+      }
     }
   }
 `
