@@ -71,10 +71,6 @@ class Home extends React.Component {
     if (this.shouldRedirectToIndex()) {
       return this.props.history.replace('/' + DEFAULT_LOCALE)
     }
-
-    // Switch the language on first render in case the user isn’t accessing the
-    // page in the default language.
-    this.props.switchLanguage(this.props.match.params.locale)
   }
 
   componentDidUpdate() {

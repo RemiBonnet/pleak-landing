@@ -44,8 +44,7 @@ const BlocksColor = () => (
         <FormattedMessage tagName="h2" id="blocks_color.left.title" />
         <FormattedMessage tagName="p" id="blocks_color.left.paragraph" />
         <Button
-          labelId="Documentation"
-          label="Documentation"
+          labelId="ui.documentation"
           documentation
           noBg
         />

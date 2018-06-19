@@ -57,13 +57,17 @@ class App extends React.Component {
 }
 
 const init = async () => {
+  const currentLocale = window.location.pathname.replace('/', '').slice(0, 2)
   const enabledLocales = await fetchEnabledLocales()
-  const translations = await fetchTranslations(DEFAULT_LOCALE)
+  const locale = isEnabledLocale(enabledLocales, currentLocale)
+    ? currentLocale
+    : DEFAULT_LOCALE
+  const translations = await fetchTranslations(locale)
 
   ReactDOM.render(
     <App
       enabledLocales={enabledLocales}
-      locale={DEFAULT_LOCALE}
+      locale={locale}
       translations={translations}
     />,
     document.getElementById('root')
