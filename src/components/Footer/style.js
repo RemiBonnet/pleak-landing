@@ -12,7 +12,7 @@ export const FooterStyle = styled.div`
   .Footer {
     max-width: 1170px;
     margin: 0 auto;
-    ${ media.tablet`
+    ${ media.large`
       margin: 0 24px;
     ` }
     &__top {

@@ -9,9 +9,9 @@ export const NavigationStyle = styled.div`
   width: 100%;
   height: 80px;
   z-index: 2;
-  ${ media.tablet`
+  ${ media.large`
     padding: 0 24px;
-  ` }
+  `}
   & > div {
     position: relative;
     max-width: 1170px;

@@ -24,7 +24,7 @@ export const BlocksStyle = styled.div`
       .Block {
         &__img div {
           right: 130px;
-          ${ media.tablet`
+          ${ media.large`
             right: 100px;
           ` }
           ${ media.mobile`
@@ -64,11 +64,20 @@ export const BlocksStyle = styled.div`
         transform: translateY(-50%);
         width: 500px;
         height: auto;
+        ${ media.large`
+          width: 400px;
+        ` }
+        
         svg {
           width: 100%;
+          ${ media.mobile`
+            position: absolute;
+            height: 200px;
+            top: 0;
+          ` }
         }
         ${ media.mobile`
-          position: inherit;
+          position: relative;
           display: block;
           margin: 0 auto;
           transform: inherit;
