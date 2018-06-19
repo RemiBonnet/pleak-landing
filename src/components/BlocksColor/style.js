@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { media } from '../../styles/responsive'
-import { blue, electricViolet, white } from '../../styles/colors'
+import { blue, white, dodgerBlue } from '../../styles/colors'
 
 export const BlocksColorStyle = styled.div`
   .Block {
@@ -50,7 +50,7 @@ export const BlocksColorStyle = styled.div`
       }
     }
     &__right {
-      background: ${electricViolet};
+      background: ${dodgerBlue};
       padding-left: 130px;
       ${ media.tablet`
         position: relative;
