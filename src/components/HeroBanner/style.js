@@ -33,8 +33,8 @@ export const HeroBannerStyle = styled.div`
     &__img {
       position: absolute;
       right: 0;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 55%;
+      transform: translateY(-55%);
       ${ media.tablet`
         display: none;
       ` }

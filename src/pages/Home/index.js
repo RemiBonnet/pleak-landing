@@ -106,7 +106,9 @@ class Home extends React.Component {
           </OnMobile>
           <BlocksColor />
           <BlockBeta />
-          <Footer />
+          <Footer
+            lang={this.props.intl.defaultLocale}
+          />
         </HomeContainer>
 
         {/* Helmet expects strings and not React components, so we need to use
