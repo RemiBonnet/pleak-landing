@@ -30,6 +30,18 @@ export const HeroBannerStyle = styled.div`
     &__bottom {
       height: 65px;
     }
+    &__img {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      ${ media.tablet`
+        display: none;
+      ` }
+      svg {
+        width: 470px;
+      }
+    }
     div {
       h1 {
         font-family: 'inter-bold';
