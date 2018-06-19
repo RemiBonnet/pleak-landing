@@ -12,6 +12,7 @@ export const BlocksStyle = styled.div`
     padding: 0 70px;
     ${ media.tablet`
       margin: 0 24px;
+      padding: 0;
     ` }
     ${ media.mobile`
       height: inherit;
