@@ -38,7 +38,7 @@ export const BlocksColorStyle = styled.div`
       background: ${blue};
       div {
         right: 130px;
-        margin-left: 24px;
+        margin-right: 24px;
         ${ media.tablet`
           margin-left: 0;
           right: inherit;

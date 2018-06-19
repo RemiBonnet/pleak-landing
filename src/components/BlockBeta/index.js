@@ -1,12 +1,13 @@
 import React from 'react'
+import { FormattedMessage } from 'react-intl'
 import BetaRegistration from '../BetaRegistration'
 import { BlockBetaStyle } from './style.js'
 
 const BlockBeta = () => (
   <BlockBetaStyle>
-    <div className="Beta">
-      <h2>Join our Beta version</h2>
-      <p>Interested about Pleak? Join our private Beta version by sending a request. With a minimal set up, monitor performance of all your application.</p>
+    <div>
+      <FormattedMessage id="beta.title" tagName="h2" />
+      <FormattedMessage id="beta.paragraph" tagName="p" />
       <BetaRegistration />
     </div>
   </BlockBetaStyle>

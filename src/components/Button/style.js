@@ -5,8 +5,9 @@ import { media } from '../../styles/responsive'
 export const ButtonStyle = styled.a`
   display: inline-block;
   cursor: pointer;
-  width: 170px;
+  min-width: 170px;
   height: 40px;
+  white-space: nowrap;
   line-height: 40px;
   background: ${props => props.noBg ? 'transparent' : blue};
   border: ${props => props.noBg ? `1px solid ${white40}` : '0'};

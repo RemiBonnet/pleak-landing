@@ -27,44 +27,36 @@ const OnMobile = layout.is('mobile')
 
 const sliderContent = [
   {
-    title: 'Easy to use dashboard',
-    paragraph:
-      'Consistently track the progress of all your key metrics in one place with efficiency and visibility.',
+    title: 'slider.title.0',
+    paragraph: 'slider.paragraph.0',
     img: ''
   },
   {
-    title: 'Real time segmentation',
-    paragraph:
-      'Use Pleak to capture every interaction users have with your app and collect essential performance indicators.',
+    title: 'slider.title.1',
+    paragraph: 'slider.paragraph.1',
     img: ''
   },
   {
-    title: 'Get alerted on your custom flows',
-    paragraph:
-      'Get alerted about what happened, where and when and take appropriate actions.',
+    title: 'slider.title.2',
+    paragraph: 'slider.paragraph.2',
     img: ''
   }
 ]
 
 const blocksContent = [
   {
-    title:
-      'Understand how your application perform in complex real‑world environments',
-    paragraph:
-      'Get new key performance indicators from your apps in production and improve your customers user experience by measuring segmented performance.',
+    title: 'blocks.title.0',
+    paragraph: 'blocks.paragraph.0',
     img: ''
   },
   {
-    title: 'Measure the link between technical performance and your business',
-    paragraph:
-      'Confront apps metrics with data from your marketing and business analytics platforms. Get a clear estimation of the impact of your app’s performance over time.',
+    title: 'blocks.title.1',
+    paragraph: 'blocks.paragraph.1',
     img: ''
   },
   {
-    title:
-      'Ensure your product sustainability by following the technical quality over time',
-    paragraph:
-      'Each release is an opportunity for new features update and performances check up. Be proactive and keep your product quality level at every key steps of its evolution.',
+    title: 'blocks.title.2',
+    paragraph: 'blocks.paragraph.2',
     img: ''
   }
 ]
@@ -73,20 +65,16 @@ class Home extends React.Component {
   constructor(props) {
     super(props)
 
-    const { locale, match, history } = this.props
-
     // If the user tries to access the homepage with a locale that isn’t
     // supported, redirect to the index page so that they see the page in the
     // default language.
     if (this.shouldRedirectToIndex()) {
-      return history.replace('/')
+      return this.props.history.replace('/' + DEFAULT_LOCALE)
     }
 
-    // Redirect the user to the correct page in case their browser’s locale
-    // doesn’t match the locale of the page they’re trying to access.
-    if (locale && match.params.locale !== locale) {
-      history.replace('/' + locale)
-    }
+    // Switch the language on first render in case the user isn’t accessing the
+    // page in the default language.
+    this.props.switchLanguage(this.props.match.params.locale)
   }
 
   componentDidUpdate() {
@@ -99,7 +87,7 @@ class Home extends React.Component {
     const routerLocale = this.props.match.params.locale
 
     return (
-      routerLocale && !isEnabledLocale(this.props.enabledLocales, routerLocale)
+      !routerLocale || !isEnabledLocale(this.props.enabledLocales, routerLocale)
     )
   }
 

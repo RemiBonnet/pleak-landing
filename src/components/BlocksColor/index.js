@@ -1,4 +1,5 @@
 import React from 'react'
+import { FormattedMessage } from 'react-intl'
 import { BlocksColorStyle } from './style.js'
 import Button from '../Button/index.js';
 
@@ -39,9 +40,11 @@ const BlocksColor = () => (
             </linearGradient>
           </defs>
         </svg>
-        <h2>Customize your monitoring with the data you need</h2>
-        <p>Each app is different! Create, track and analyse custom metrics from tools integrations and empower your team to personalize monitoring.</p>
+
+        <FormattedMessage tagName="h2" id="blocks_color.left.title" />
+        <FormattedMessage tagName="p" id="blocks_color.left.paragraph" />
         <Button
+          labelId="Documentation"
           label="Documentation"
           documentation
           noBg
@@ -53,8 +56,9 @@ const BlocksColor = () => (
         <iframe
         title="Pleak library repository"
         src="https://ghbtns.com/github-btn.html?user=pleak&repo=pleak-react-perf-monitor&type=watch&count=true" scrolling="0" width="auto" height="30px"></iframe>
-        <h2>What Pleak does is up to your contributions</h2>
-        <p>Open source SDK give the possibility to make Pleak evolve for your own needs. We are fully open to feedback from our dear users.</p>
+
+        <FormattedMessage tagName="h2" id="blocks_color.right.title" />
+        <FormattedMessage tagName="p" id="blocks_color.right.paragraph" />
         <Button
           label="Github"
           github

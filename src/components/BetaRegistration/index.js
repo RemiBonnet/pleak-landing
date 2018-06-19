@@ -1,11 +1,12 @@
 import React from 'react'
+import { FormattedMessage, injectIntl } from 'react-intl'
 import MailchimpSubscribe from 'react-mailchimp-subscribe'
 import { BetaRegistrationStyle } from './style.js'
 import { ButtonStyle } from '../Button/style.js'
 
 const url = process.env.REACT_APP_SECRET
 
-const BetaRegistration = () => {
+const BetaRegistration = (props) => {
   let email
   const submit = (onValidated) => {
     email &&
@@ -35,23 +36,24 @@ const BetaRegistration = () => {
                 ref={node => (email = node)}
                 type="email"
                 onKeyPress={(e) => keyPress(e, formData => subscribe(formData))}
-                placeholder="Enter your email address" 
+                placeholder={props.intl.formatMessage({ id: 'beta.email' })}
               />
               <ButtonStyle
                 onClick={() => submit(formData => subscribe(formData))}
               >
-                Send request
+                <FormattedMessage id="beta.submit" />
               </ButtonStyle>
             </div>
             <div className="Msg">
               { status === 'error' &&
                 <div className="Msg__error">
-                  Please enter a valid email
+                  <FormattedMessage id="beta.invalid_email" />
                 </div>
               }
               { status === 'success' &&
                 <div className="Msg__success">
-                  <span role="img" aria-label="success">✅</span> Thank you, you'll be contacted soon about our closed beta launch.
+                  <span role="img" aria-label="success">✅</span>
+                  <FormattedMessage id="beta.success" />
                 </div>
               }
             </div>
@@ -62,4 +64,4 @@ const BetaRegistration = () => {
   )
 }
 
-export default BetaRegistration
+export default injectIntl(BetaRegistration)

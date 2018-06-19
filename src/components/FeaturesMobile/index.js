@@ -1,4 +1,5 @@
 import React from 'react'
+import { FormattedMessage } from 'react-intl'
 import { FeaturesMobileStyle } from './style'
 
 const FeaturesMobile = props => (
@@ -7,8 +8,8 @@ const FeaturesMobile = props => (
     {props.content.map(content => {
       return (
         <div key={content.title}>
-          <h3>{content.title}</h3>
-          <p>{content.paragraph}</p>
+          <FormattedMessage id={content.title} tagName="h3" />
+          <FormattedMessage id={content.paragraph} tagName="p" />
         </div>
       )
     })}
