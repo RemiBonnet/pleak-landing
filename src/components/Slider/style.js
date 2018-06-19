@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { black, white, red, blue, electricViolet } from '../../styles/colors'
+import { black, white, electricViolet } from '../../styles/colors'
 import { media } from '../../styles/responsive'
 
 export const SliderStyle = styled.div`
@@ -28,13 +28,16 @@ export const SliderStyle = styled.div`
         height: 470px;
         transition: opacity 200ms ease-in-out;
         &--1 {
-          background: ${white};
+          background-image: url('1.png');
+          background-size: cover;
         }
         &--2 {
-          background: ${red};
+          background-image: url('2.png');
+          background-size: cover;
         }
         &--3 {
-          background: ${blue};
+          background-image: url('3.png');
+          background-size: cover;
         }
       }
     }
