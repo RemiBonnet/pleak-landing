@@ -8,11 +8,12 @@ const Navigation = () => (
     <div>
       <img src={process.env.PUBLIC_URL + '/logo-blue.svg'} alt="Pleak logo" />
       <div className="Navigation__left">
-        <a 
+        <a
           className="Link"
           rel="noopener noreferrer"
           target="_blank"
-          href="https://github.com/pleak/pleak-react-perf-monitor/blob/master/README.md">
+          href="https://github.com/pleak/pleak-react-perf-monitor/blob/master/README.md"
+        >
           <FormattedMessage id="ui.documentation" />
         </a>
         <a
@@ -25,10 +26,7 @@ const Navigation = () => (
         </a>
       </div>
       <div className="Navigation__right">
-         <Button
-          label="Request a demo"
-          demo
-        />
+        <Button labelId="ui.request_demo" demo />
         <a href="http://pleak-dashboard.herokuapp.com/" className="Link">
           <FormattedMessage id="ui.sign_in" />
         </a>
