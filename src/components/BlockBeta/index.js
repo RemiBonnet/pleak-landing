@@ -5,7 +5,7 @@ import { BlockBetaStyle } from './style.js'
 
 const BlockBeta = () => (
   <BlockBetaStyle>
-    <div>
+    <div className="Beta">
       <FormattedMessage id="beta.title" tagName="h2" />
       <FormattedMessage id="beta.paragraph" tagName="p" />
       <BetaRegistration />
