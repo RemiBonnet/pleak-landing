@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 import { media } from '../../styles/responsive'
-import { fiord, blue, mercury } from '../../styles/colors'
+import { fiord, mercury } from '../../styles/colors'
 
 export const BlocksStyle = styled.div`
   .Block {
     display: block;
     margin: 0 auto;
     max-width: 1170px;
-    height: 470px;
+    height: 490px;
     border-bottom: 1px solid ${mercury};
     ${ media.tablet`
       margin: 0 24px;
@@ -24,7 +24,7 @@ export const BlocksStyle = styled.div`
       .Block {
         &__img div {
           right: 130px;
-          ${ media.tablet`
+          ${ media.large`
             right: 100px;
           ` }
           ${ media.mobile`
@@ -62,11 +62,22 @@ export const BlocksStyle = styled.div`
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        width: 270px;
-        height: 270px;
-        background: ${blue};
+        width: 500px;
+        height: auto;
+        ${ media.large`
+          width: 400px;
+        ` }
+        
+        svg {
+          width: 100%;
+          ${ media.mobile`
+            position: absolute;
+            height: 200px;
+            top: 0;
+          ` }
+        }
         ${ media.mobile`
-          position: inherit;
+          position: relative;
           display: block;
           margin: 0 auto;
           transform: inherit;

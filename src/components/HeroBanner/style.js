@@ -1,11 +1,11 @@
 import styled from 'styled-components'
-import { white } from '../../styles/colors'
+import { fiord, zircon } from '../../styles/colors'
 import { media } from '../../styles/responsive'
 
 export const HeroBannerStyle = styled.div`
   width: 100%;
   height: calc(100vh - 100px);
-  background: blue;
+  background: ${zircon};
   ${ media.large`
     padding: 0 24px;
   ` }
@@ -30,12 +30,25 @@ export const HeroBannerStyle = styled.div`
     &__bottom {
       height: 65px;
     }
+    &__img {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      ${ media.tablet`
+        display: none;
+      ` }
+      svg {
+        width: 470px;
+      }
+    }
     div {
       h1 {
         font-family: 'inter-bold';
-        color: ${white};
+        color: ${fiord};
         font-size: 45px;
         line-height: 55px;
+        max-width: 570px;
         ${ media.mobile`
           font-size: 32px;
           line-height: 40px;
@@ -46,7 +59,7 @@ export const HeroBannerStyle = styled.div`
         margin-top: 18px;
         max-width: 470px;
         font-family: 'inter-regular';
-        color: ${white};
+        color: ${fiord};
         font-size: 16px;
         line-height: 25px;
         margin-bottom: 25px;

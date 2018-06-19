@@ -45,7 +45,8 @@ const BlocksColor = () => (
         <FormattedMessage tagName="p" id="blocks_color.left.paragraph" />
         <Button
           labelId="Documentation"
-          url=""
+          label="Documentation"
+          documentation
           noBg
         />
       </div>
@@ -60,8 +61,8 @@ const BlocksColor = () => (
         <FormattedMessage tagName="p" id="blocks_color.right.paragraph" />
         <Button
           label="Github"
-          url=""
           github
+          noBg
         />
       </div>
     </div>

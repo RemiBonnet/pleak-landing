@@ -6,9 +6,13 @@ import Button from '../Button'
 const Navigation = () => (
   <NavigationStyle>
     <div>
-      <img src={process.env.PUBLIC_URL + '/logo-white.svg'} alt="Pleak logo" />
+      <img src={process.env.PUBLIC_URL + '/logo-blue.svg'} alt="Pleak logo" />
       <div className="Navigation__left">
-        <a className="Link" href="">
+        <a 
+          className="Link"
+          rel="noopener noreferrer"
+          target="_blank"
+          href="https://github.com/pleak/pleak-react-perf-monitor/blob/master/README.md">
           <FormattedMessage id="ui.documentation" />
         </a>
         <a
@@ -21,7 +25,10 @@ const Navigation = () => (
         </a>
       </div>
       <div className="Navigation__right">
-        <Button label="Github" url="" github />
+         <Button
+          label="Request a demo"
+          demo
+        />
         <a href="http://pleak-dashboard.herokuapp.com/" className="Link">
           <FormattedMessage id="ui.sign_in" />
         </a>
