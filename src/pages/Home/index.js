@@ -107,7 +107,7 @@ class Home extends React.Component {
           <BlocksColor />
           <BlockBeta />
           <Footer
-            lang={this.props.intl.defaultLocale}
+            lang={this.props.location.pathname}
           />
         </HomeContainer>
 

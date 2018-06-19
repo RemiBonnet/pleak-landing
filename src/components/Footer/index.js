@@ -37,13 +37,13 @@ const Footer = props => {
             </a>
             <div className="Languages">
               <a
-                className={lang === 'en' ? 'active': ''}
+                className={lang === '/en' ? 'active': ''}
                 href="/en">
                   EN
               </a>
               <span>/</span>
               <a
-                className={lang === 'fr' ? 'active' : ''}
+                className={lang === '/fr' ? 'active' : ''}
                 href="/fr">
                   FR
               </a>
